@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <title>Calculator</title>
+    <style>
+        input[type=button] {
+            background: #e87c00;
+            border: none;
+            color: #ffffff;
+            height: 50px;
+            border-radius: 25px;
+            width: 50px;
+            font-size: 35px;
+        }
+        input[type=button]:active {
+            background: #ffdfaa;
+            transition: 0s;
+        }
+        #switch {
+            font-weight: bold;
+            font-size: 40px;
+            background: transparent;
+            color: #e87c00;
+        }
+        #switch:active {
+            background: #e2e2e2;
+            transition: 0s;
+        }
+        #tri {
+            font-size: 23px;
+        }
+        input[type=text] {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #595959;
+            height: 40px;
+            width: 100%;
+            font-size: 35px;
+            text-align: right;
+        }
+        #display {
+            height: 70px;
+            font-size: 70px;
+            color: black;
+        }
+        #d3 {
+            color: #b7b7b7;
+        }
+        #d4 {
+            color: #dfdfdf;
+        }
+        #d5 {
+            color: #f4f4f4;
+        }
+
+        header {
+            background: #ffffff;
+            padding-top: 0px;
+            min-height: 0px;
+            border-bottom: #e8491d 2px solid;
+        }
+        header a {
+            color: black;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+
+        header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #cccccc;
+        }
+        
+        th,td {
+            text-align: center;
+            padding: 0px;
+            height: 50px;
+            margin: 0px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <center>
+                <ul>
+                    <li><a href="index.html">3d</a></li>
+                    <li class="current"><a href="cal2.html">classic</a></li>
+                    <li><a href="converter.html">converter</a></li>
+                </ul>
+            </center>
+        </nav>
+    </header>
+    <br>
+    <table border="0" align="center" width="380px" height="100%" cellspacing="7">
+        <tr height="85px">
+            <td colspan="6">
+                <input type="text" id="d5" readonly><br>
+                <input type="text" id="d4" readonly><br>
+                <input type="text" id="d3" readonly><br>
+                <input type="text" id="d2" readonly><br>
+                <input type="text" id="display" name="display2" readonly><hr color="#e87c00">
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="sin" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='sin('+display.value+'°)',display.value= Math.sin(((display.value)*Math.PI)/180)"></td>
+            <td><input type="button" value="cos" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='cos('+display.value+'°)',display.value= Math.cos(((display.value)*Math.PI)/180)"></td>
+            <td><input type="button" value="tan" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='tan('+display.value+'°)',display.value= Math.tan(((display.value)*Math.PI)/180)"></td>
+            <td><input type="button" value="cot" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='cot('+display.value+'°)',display.value=1/ Math.tan(((display.value)*Math.PI)/180)"></td>
+            <td><input type="button" value="sec" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='sec('+display.value+'°)',display.value=1/ Math.cos(((display.value)*Math.PI)/180)"></td>
+            <td><input type="button" value="csc" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='cosec('+display.value+'°)',display.value=1/ Math.sin(((display.value)*Math.PI)/180)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="asin" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='arcsin('+display.value+')',display.value= (Math.asin(display.value))*180/Math.PI"></td>
+            <td><input type="button" value="acos" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='arccos('+display.value+')',display.value= (Math.acos(display.value))*180/Math.PI"></td>
+            <td><input type="button" value="atan" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='arctan('+display.value+')',display.value= (Math.atan(display.value))*180/Math.PI"></td>
+            <td><input type="button" value="acot" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='arccot('+display.value+')',display.value=(Math.atan(1/(display.value)))*180/Math.PI"></td>
+            <td><input type="button" value="asec" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='arcsec('+display.value+')',display.value=(Math.acos(1/(display.value)))*180/Math.PI"></td>
+            <td><input type="button" value="acsc" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='arccosec('+display.value+')',display.value=(Math.asin(1/(display.value)))*180/Math.PI"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="x²" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value=display.value+'^2',display.value=Math.pow ((display.value),2)"></td>
+            <td><input type="button" value="√x" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='√'+display.value,display.value=Math.sqrt(display.value)"></td>
+            <td><input type="button" value="C" onclick="display.value = '',x='', audio.play(),d2.value=x,d3.value='',d4.value='',d5.value=''" id="c"></td>
+            <td><input type="button" value="<-" onclick="display.value = display.value.substr(0, display.value.length-1), audio.play();"></td>
+            <td><input type="button" value="%" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value=display.value+'%',display.value =((display.value)/100);"></td>
+            <td><input type="button" value="/" onclick="display.value +='/',audio.play();"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="x!" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,submit()"></td>
+            <td><input type="button" value="π" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value=display.value+'π',display.value+=Math.PI"></td>
+            <td><input type="button" value="7" onclick="display.value += 7, audio.play();"></td>
+            <td><input type="button" value="8" onclick="display.value += 8, audio.play();"></td>
+            <td><input type="button" value="9" onclick="display.value += 9, audio.play();"></td>
+            <td><input type="button" value="*" onclick="display.value += '*', audio.play();"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="x^y" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value=display.value+'^',z=display.value, display.value=''"></td>
+            <td><input type="button" value="ln" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='ln('+display.value+')',display.value=Math.log(display.value)"></td>
+            <td><input type="button" value="4" onclick="display.value += 4, audio.play();"></td>
+            <td><input type="button" value="5" onclick="display.value += 5, audio.play();"></td>
+            <td><input type="button" value="6" onclick="display.value += 6, audio.play();"></td>
+            <td><input type="button" value="-" onclick="display.value += '-', audio.play();"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="|x|" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='|'+display.value+'|',display.value=Math.abs(display.value)"></td>
+            <td><input type="button" value="e^x" id="tri" onclick="d5.value=d4.value,d4.value=d3.value,d3.value=d2.value,d2.value='e^'+display.value,display.value=Math.exp(display.value)"></td>
+            <td><input type="button" value="1" onclick="display.value += 1, audio.play();"></td>
+            <td><input type="button" value="2" onclick="display.value += 2, audio.play();"></td>
+            <td><input type="button" value="3" onclick="display.value += 3, audio.play();"></td>
+            <td><input type="button" value="+" onclick="display.value += '+',audio.play();"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="(" onclick="display.value += '(', audio.play();"></td>
+            <td><input type="button" value=")" onclick="display.value += ')', audio.play();"></td>
+            <td><a href="http://swagat.liveblog365.com/cal2.html"><input type="button" value="⬁" id="switch" onclick="transData()"></a></td>
+            <td><input type="button" value="0" onclick="display.value += 0, audio.play();"></td>
+            <td><input type="button" value="." onclick="display.value += '.', audio.play();"></td>
+            <td><input type="button" value="=" onclick="x = display.value,ans();"></td>
+
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        var x = "";
+        var z = 0;
+        const audio = new Audio();
+        //audio.src="./click.mp3";
+        document.getElementById("display").value = localStorage.getItem("passValue");
+        var reset = "";
+        localStorage.setItem("passValue", reset);
+
+        document.getElementById("d2").value = localStorage.getItem("p2");
+        localStorage.setItem("p2", reset);
+        document.getElementById("d3").value = localStorage.getItem("p3");
+        localStorage.setItem("p3", reset);
+        document.getElementById("d4").value = localStorage.getItem("p4");
+        localStorage.setItem("p4", reset);
+        document.getElementById("d5").value = localStorage.getItem("p5");
+        localStorage.setItem("p5", reset);
+
+        function ans() {
+            var answer = check(z);
+            document.getElementById("display").value = answer;
+            function check(z) {
+                var an;
+                if (z != 0) {
+                    var pw1 = z+"**";
+                    var pw2 = display.value;
+                    an = eval(pw1 += display.value);
+                    d2.value = z+"^"+pw2;
+                    return an;
+                } else {
+                    an = eval(x);
+                    d5.value = d4.value;
+                    d4.value = d3.value;
+                    d3.value = d2.value;
+                    d2.value = x;
+                    return an;
+                }
+            }
+            z = 0;
+        }
+        function submit() {
+            var num = parseInt(document.getElementById("display").value);
+            var factorial = calcFact(num);
+            document.getElementById("display").value = factorial;
+            document.getElementById("d2").value = num+"!";
+        }
+        function calcFact(num) {
+            var i;
+            var fact = 1;
+            for (i = 1; i <= num; i++) {
+                fact = fact * i;
+            }
+            return fact;
+        }
+
+    </script>
+    <script src="display.js"></script>
+
+</body>
+</html>
